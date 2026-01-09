@@ -16,7 +16,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'This is Test Stage'
+                echo 'This is Test Stage Github push'
             }
         }
         stage('deploy') {
