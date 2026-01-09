@@ -11,17 +11,17 @@ pipeline {
         }  
         stage('Maven-clean') {
             steps {
-                mvn clean
+                sh 'mvn clean'
             }
         }  
         stage('Maven-build') {
             steps {
-                mvn build
+                sh 'mvn build'
             }
         }
         stage('Maven-deploy') {
             steps {
-                mvn deploy
+                sh 'mvn deploy'
             }
         }
     }
