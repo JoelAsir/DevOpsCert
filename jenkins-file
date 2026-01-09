@@ -1,17 +1,17 @@
 pipeline {
     agent none
     stages {
-        stage('Step 1') {
+        stage('SCM-Checkout') {
             steps {
                 echo 'This is Stage 1'
             }
         }
-        stage('Step 2') {
+        stage('Maven-build') {
             steps {
                 echo 'This is Stage 2'
             }
         }
-        stage('Step 3') {
+        stage('Maven-deploy') {
             steps {
                 echo 'This is Stage 3'
             }
