@@ -9,14 +9,19 @@ pipeline {
                  git credentialsId: 'git-credentials', url: 'https://github.com/JoelAsir/DevOpsCert.git'
             }
         }  
-        stage('Maven-build') {
+        stage('build') {
             steps {
-                sh 'mvn build'
+                echo 'This is Build Stage'
             }
         }
-        stage('Maven-deploy') {
+        stage('test') {
             steps {
-                sh 'mvn deploy'
+                echo 'This is Test Stage'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'This is Deploy Stage'
             }
         }
     }
