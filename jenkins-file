@@ -1,19 +1,22 @@
 pipeline {
-    agent none
+    agent any
+    tools {
+        maven 'mvn_home'
+    }
     stages {
         stage('SCM-Checkout') {
             steps {
-                echo 'This is Stage 1'
+                git branch: 'master', git credentialsId: 'git-credentials', url: 'https://github.com/JoelAsir/DevOpsCert.git'
             }
         }
         stage('Maven-build') {
             steps {
-                echo 'This is Stage 2'
+                mvn build
             }
         }
         stage('Maven-deploy') {
             steps {
-                echo 'This is Stage 3'
+                mvn deploy
             }
         }
     }
